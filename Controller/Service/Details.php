@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Controller\Service;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Service;
 
 class Details extends \Magento\Framework\App\Action\Action
 {
@@ -13,7 +13,7 @@ class Details extends \Magento\Framework\App\Action\Action
         \Magento\Framework\View\Result\PageFactory $pageFactory,
         \Magento\Framework\Registry $registry,
         \Magento\Customer\Model\Session $customerSession,
-        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory
+        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory
     ) {
         $this->pageFactory = $pageFactory;
         $this->coreRegistry = $registry;

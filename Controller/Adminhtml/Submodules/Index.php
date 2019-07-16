@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Submodules;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Submodules;
 
 class Index extends \Magento\Backend\App\Action
 {
@@ -11,7 +11,7 @@ class Index extends \Magento\Backend\App\Action
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Framework\Registry $registry,
-        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory
+        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory
     ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
@@ -23,11 +23,11 @@ class Index extends \Magento\Backend\App\Action
 
     public function execute()
     {
-        $submodules = \Logshub\OpenSubscriptions\Model\Submodule::all();
+        $submodules = \OpenSubscriptions\OpenSubscriptions\Model\Submodule::all();
         $this->coreRegistry->register('submodules', $submodules);
 
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Logshub_OpenSubscriptions::index');
+        $resultPage->setActiveMenu('OpenSubscriptions_OpenSubscriptions::index');
         $resultPage->getConfig()->getTitle()->prepend((__('Submodules')));
 
         return $resultPage;

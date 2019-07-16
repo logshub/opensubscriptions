@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Services;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Services;
 
 class Orderitems extends \Magento\Backend\App\Action
 {
@@ -13,7 +13,7 @@ class Orderitems extends \Magento\Backend\App\Action
         \Magento\Framework\Controller\Result\RawFactory $resultRawFactory,
         \Magento\Framework\View\LayoutFactory $layoutFactory,
         \Magento\Framework\Registry $registry,
-        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory
+        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory
     ) {
         parent::__construct($context);
         $this->resultRawFactory = $resultRawFactory;
@@ -41,7 +41,7 @@ class Orderitems extends \Magento\Backend\App\Action
         $this->coreRegistry->register('current_service', $service);
 
         $layout = $this->layoutFactory->create();
-        $html = $layout->createBlock(\Logshub\OpenSubscriptions\Block\Adminhtml\Services\OrderItems::class)->toHtml();
+        $html = $layout->createBlock(\OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\OrderItems::class)->toHtml();
         $resultRaw = $this->resultRawFactory->create();
         $resultRaw->setContents($html);
 

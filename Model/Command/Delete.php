@@ -1,9 +1,9 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model\Command;
+namespace OpenSubscriptions\OpenSubscriptions\Model\Command;
 
-use Logshub\OpenSubscriptions\Model\CommandInterface;
-use Logshub\OpenSubscriptions\Exception\CommandException;
-use Logshub\OpenSubscriptions\Model\Service;
+use OpenSubscriptions\OpenSubscriptions\Model\CommandInterface;
+use OpenSubscriptions\OpenSubscriptions\Exception\CommandException;
+use OpenSubscriptions\OpenSubscriptions\Model\Service;
 
 /**
  * Basic command that works without external service

@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Setup;
+namespace OpenSubscriptions\OpenSubscriptions\Setup;
 
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;

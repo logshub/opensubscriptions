@@ -1,6 +1,6 @@
 <?php
 
-namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Services;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Services;
 
 class Delete extends \Magento\Backend\App\Action
 {
@@ -11,8 +11,8 @@ class Delete extends \Magento\Backend\App\Action
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
-        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory,
-        \Logshub\OpenSubscriptions\Model\ActivityLogFactory $activityLogFactory
+        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory,
+        \OpenSubscriptions\OpenSubscriptions\Model\ActivityLogFactory $activityLogFactory
     ) {
         parent::__construct($context);
         $this->resultJsonFactory = $resultJsonFactory;
@@ -46,7 +46,7 @@ class Delete extends \Magento\Backend\App\Action
             return $result->setData([
                 'success' => true
             ]);
-        } catch (\Logshub\OpenSubscriptions\Exception\CommandException $e) {
+        } catch (\OpenSubscriptions\OpenSubscriptions\Exception\CommandException $e) {
             return $result->setData([
                 'error' => $e->getMessage()
             ]);

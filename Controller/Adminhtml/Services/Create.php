@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Services;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Services;
 
 class Create extends \Magento\Backend\App\Action
 {
@@ -24,7 +24,7 @@ class Create extends \Magento\Backend\App\Action
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Framework\Registry $registry,
-        \Logshub\OpenSubscriptions\Helper\Data $helper
+        \OpenSubscriptions\OpenSubscriptions\Helper\Data $helper
     ) {
         $this->resultPageFactory = $resultPageFactory;
         $this->oaHelper = $helper;
@@ -37,7 +37,7 @@ class Create extends \Magento\Backend\App\Action
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Logshub_OpenSubscriptions::services_new');
+        return $this->_authorization->isAllowed('OpenSubscriptions_OpenSubscriptions::services_new');
     }
 
     /**
@@ -49,7 +49,7 @@ class Create extends \Magento\Backend\App\Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Logshub_OpenSubscriptions::services');
+        $resultPage->setActiveMenu('OpenSubscriptions_OpenSubscriptions::services');
         return $resultPage;
     }
 

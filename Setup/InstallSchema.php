@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Setup;
+namespace OpenSubscriptions\OpenSubscriptions\Setup;
 
 class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 {

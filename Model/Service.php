@@ -1,10 +1,10 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model;
+namespace OpenSubscriptions\OpenSubscriptions\Model;
 
 use Magento\Customer\Model\Customer;
 use Magento\Catalog\Model\Product;
 use Magento\Sales\Model\Order;
-use \Logshub\OpenSubscriptions\Exception\SubmoduleException;
+use \OpenSubscriptions\OpenSubscriptions\Exception\SubmoduleException;
 
 class Service extends \Magento\Framework\Model\AbstractModel
 {
@@ -24,7 +24,7 @@ class Service extends \Magento\Framework\Model\AbstractModel
      */
     protected $customer;
     /**
-     * @var \Logshub\OpenSubscriptions\Model\Connection
+     * @var \OpenSubscriptions\OpenSubscriptions\Model\Connection
      */
     protected $connection;
     /**
@@ -36,7 +36,7 @@ class Service extends \Magento\Framework\Model\AbstractModel
      */
     protected $firstOrder;
     /**
-     * @var \Logshub\OpenSubscriptions\Model\ResourceModel\Service\Setting\Collection
+     * @var \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Setting\Collection
      */
     protected $settingsCollection;
     /**
@@ -47,7 +47,7 @@ class Service extends \Magento\Framework\Model\AbstractModel
 
     protected function _construct()
     {
-        $this->_init('Logshub\OpenSubscriptions\Model\ResourceModel\Service');
+        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service');
     }
 
     public function loadByFakeId($fakeId)
@@ -117,14 +117,14 @@ class Service extends \Magento\Framework\Model\AbstractModel
     }
 
     /**
-     * @var \Logshub\OpenSubscriptions\Model\Connection
+     * @var \OpenSubscriptions\OpenSubscriptions\Model\Connection
      */
-    public function getConnection(): \Logshub\OpenSubscriptions\Model\Connection
+    public function getConnection(): \OpenSubscriptions\OpenSubscriptions\Model\Connection
     {
         if ($this->connection === null) {
             // TODO: better way ?
             $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-            $this->connection = $objectManager->create('Logshub\OpenSubscriptions\Model\Connection')
+            $this->connection = $objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\Connection')
                 ->load($this->getConnectionId());
         }
 
@@ -169,7 +169,7 @@ class Service extends \Magento\Framework\Model\AbstractModel
             }
         }
 
-        throw new \Logshub\OpenSubscriptions\Exception\CommandException('Command not found');
+        throw new \OpenSubscriptions\OpenSubscriptions\Exception\CommandException('Command not found');
     }
 
     public function assignOrderItem(\Magento\Sales\Model\Order\Item $item)
@@ -203,13 +203,13 @@ class Service extends \Magento\Framework\Model\AbstractModel
         return $default;
     }
 
-    public function getSettingsCollection(): \Logshub\OpenSubscriptions\Model\ResourceModel\Service\Setting\Collection
+    public function getSettingsCollection(): \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Setting\Collection
     {
         if ($this->settingsCollection === null) {
             // TODO: better way ?
             $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 
-            $this->settingsCollection = $objectManager->create('Logshub\OpenSubscriptions\Model\ResourceModel\Service\Setting\Collection')
+            $this->settingsCollection = $objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Setting\Collection')
                 ->addServiceFiler($this->getServiceId());
         }
 

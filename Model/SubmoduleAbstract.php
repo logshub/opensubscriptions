@@ -1,41 +1,41 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model;
+namespace OpenSubscriptions\OpenSubscriptions\Model;
 
-use Logshub\OpenSubscriptions\Model\SubmoduleInterface;
-use Logshub\OpenSubscriptions\Model\CommandInterface;
-use Logshub\OpenSubscriptions\Model\Connection as OaConnection;
-use Logshub\OpenSubscriptions\Model\SubmoduleConnectionInterface;
+use OpenSubscriptions\OpenSubscriptions\Model\SubmoduleInterface;
+use OpenSubscriptions\OpenSubscriptions\Model\CommandInterface;
+use OpenSubscriptions\OpenSubscriptions\Model\Connection as OaConnection;
+use OpenSubscriptions\OpenSubscriptions\Model\SubmoduleConnectionInterface;
 
 abstract class SubmoduleAbstract implements SubmoduleInterface
 {
     public function getCreateCommand(): CommandInterface
     {
-        return new \Logshub\OpenSubscriptions\Model\Command\Create();
+        return new \OpenSubscriptions\OpenSubscriptions\Model\Command\Create();
     }
 
     public function getDeleteCommand(): CommandInterface
     {
-        return new \Logshub\OpenSubscriptions\Model\Command\Delete();
+        return new \OpenSubscriptions\OpenSubscriptions\Model\Command\Delete();
     }
 
     public function getEnableCommand(): CommandInterface
     {
-        return new \Logshub\OpenSubscriptions\Model\Command\Enable();
+        return new \OpenSubscriptions\OpenSubscriptions\Model\Command\Enable();
     }
 
     public function getDisableCommand(): CommandInterface
     {
-        return new \Logshub\OpenSubscriptions\Model\Command\Disable();
+        return new \OpenSubscriptions\OpenSubscriptions\Model\Command\Disable();
     }
 
     public function getResetCredentialsCommand(): CommandInterface
     {
-        return new \Logshub\OpenSubscriptions\Model\Command\ResetCredentials();
+        return new \OpenSubscriptions\OpenSubscriptions\Model\Command\ResetCredentials();
     }
 
     public function getStatusCommand(): CommandInterface
     {
-        return new \Logshub\OpenSubscriptions\Model\Command\Status();
+        return new \OpenSubscriptions\OpenSubscriptions\Model\Command\Status();
     }
 
     public function getHelpBlock(): string

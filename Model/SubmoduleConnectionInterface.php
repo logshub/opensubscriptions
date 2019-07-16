@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model;
+namespace OpenSubscriptions\OpenSubscriptions\Model;
 
 interface SubmoduleConnectionInterface
 {

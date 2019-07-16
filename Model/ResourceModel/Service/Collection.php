@@ -1,15 +1,15 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model\ResourceModel\Service;
+namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
     protected $_idFieldName = 'service_id';
-    protected $_eventPrefix = 'logshub_opensubscriptions_service_collection';
+    protected $_eventPrefix = 'opensubscriptions_service_collection';
     protected $_eventObject = 'service_collection';
 
     protected function _construct()
     {
-        $this->_init('Logshub\OpenSubscriptions\Model\Service', 'Logshub\OpenSubscriptions\Model\ResourceModel\Service');
+        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\Service', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service');
     }
 
     public function filterByCustomer(int $customerId)

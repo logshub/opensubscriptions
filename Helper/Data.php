@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Helper;
+namespace OpenSubscriptions\OpenSubscriptions\Helper;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs;
+namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs;
 
 class Edit extends \Magento\Backend\Block\Widget\Form\Container
 {
@@ -32,7 +32,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     protected function _construct()
     {
         $this->_objectId = 'service_id';
-        $this->_blockGroup = 'Logshub_OpenSubscriptions';
+        $this->_blockGroup = 'OpenSubscriptions_OpenSubscriptions';
         $this->_controller = 'adminhtml_services_details_tabs';
 
         parent::_construct();

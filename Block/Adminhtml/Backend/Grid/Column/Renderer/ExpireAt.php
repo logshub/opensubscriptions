@@ -1,7 +1,7 @@
 <?php
-namespace Logshub\OpenSubscriptions\Block\Adminhtml\Backend\Grid\Column\Renderer;
+namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Backend\Grid\Column\Renderer;
 
-use Logshub\OpenSubscriptions\Model\Service;
+use OpenSubscriptions\OpenSubscriptions\Model\Service;
 
 class ExpireAt extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
 {

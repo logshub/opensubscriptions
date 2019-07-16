@@ -3,11 +3,11 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-            <block class="Logshub\OpenSubscriptions\Block\Adminhtml\Connections" name="opensubscriptions_connections_grid">
+            <block class="OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Connections" name="opensubscriptions_connections_grid">
                 <block class="Magento\Backend\Block\Widget\Grid" name="opensubscriptions_connections_grid.grid" as="grid">
                     <arguments>
                         <argument name="id" xsi:type="string">connection_id</argument>
-                        <argument name="dataSource" xsi:type="object">Logshub\OpenSubscriptions\Model\ResourceModel\Connection\Collection</argument>
+                        <argument name="dataSource" xsi:type="object">OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection\Collection</argument>
                         <argument name="default_sort" xsi:type="string">connection_id</argument>
                         <argument name="default_dir" xsi:type="string">DESC</argument>
                         <argument name="save_parameters_in_session" xsi:type="string">1</argument>

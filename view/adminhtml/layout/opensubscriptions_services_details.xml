@@ -7,7 +7,7 @@
         <block class="Magento\Sales\Block\Adminhtml\Order\View" name="sales_order_edit"/>
     </referenceContainer>
     <referenceContainer name="left">
-      <block class="Logshub\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs" name="opensubscriptions_services_details_tabs" />
+      <block class="OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs" name="opensubscriptions_services_details_tabs" />
     </referenceContainer>
   </body>
 </page>

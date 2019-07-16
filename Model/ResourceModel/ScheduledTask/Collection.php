@@ -1,15 +1,15 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model\ResourceModel\ScheduledTask;
+namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ScheduledTask;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
     protected $_idFieldName = 'id';
-    protected $_eventPrefix = 'logshub_opensubscriptions_scheduledtask_collection';
+    protected $_eventPrefix = 'opensubscriptions_scheduledtask_collection';
     protected $_eventObject = 'scheduledtask_collection';
 
     protected function _construct()
     {
-        $this->_init('Logshub\OpenSubscriptions\Model\ScheduledTask', 'Logshub\OpenSubscriptions\Model\ResourceModel\ScheduledTask');
+        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ScheduledTask', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ScheduledTask');
     }
 
     public function joinServices(array $fields = [])

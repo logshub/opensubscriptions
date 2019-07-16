@@ -1,7 +1,7 @@
 <?php
-namespace Logshub\OpenSubscriptions\Block\Checkout\Cart;
+namespace OpenSubscriptions\OpenSubscriptions\Block\Checkout\Cart;
 
-use Logshub\OpenSubscriptions\Model\Service;
+use OpenSubscriptions\OpenSubscriptions\Model\Service;
 
 class AssignService extends \Magento\Checkout\Block\Cart\Additional\Info
 {
@@ -32,7 +32,7 @@ class AssignService extends \Magento\Checkout\Block\Cart\Additional\Info
             return [];
         }
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $servicesCollection = $objectManager->create('Logshub\OpenSubscriptions\Model\ResourceModel\Service\Collection')
+        $servicesCollection = $objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Collection')
             ->filterByCustomer($customnerId)
             ->filterBySubmodule($submodule)
             ->filterByStatus([Service::ACTIVE, Service::DISABLED])
@@ -41,7 +41,7 @@ class AssignService extends \Magento\Checkout\Block\Cart\Additional\Info
         return $servicesCollection;
     }
 
-    public function getServiceOptionName(\Logshub\OpenSubscriptions\Model\Service $service)
+    public function getServiceOptionName(\OpenSubscriptions\OpenSubscriptions\Model\Service $service)
     {
         if ($service->getName()){
             return $service->getFakeId() . ' (' . $service->getName() . ')';

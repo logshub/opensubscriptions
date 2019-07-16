@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model\Connection;
+namespace OpenSubscriptions\OpenSubscriptions\Model\Connection;
 
 class SettingDefinition
 {

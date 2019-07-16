@@ -1,15 +1,15 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model\ResourceModel\ActivityLog;
+namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ActivityLog;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
     protected $_idFieldName = 'log_id';
-    protected $_eventPrefix = 'logshub_opensubscriptions_activitylog_collection';
+    protected $_eventPrefix = 'opensubscriptions_activitylog_collection';
     protected $_eventObject = 'activitylog_collection';
 
     protected function _construct()
     {
-        $this->_init('Logshub\OpenSubscriptions\Model\ActivityLog', 'Logshub\OpenSubscriptions\Model\ResourceModel\ActivityLog');
+        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ActivityLog', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ActivityLog');
     }
 
     public function joinAdmins(array $fields = [])

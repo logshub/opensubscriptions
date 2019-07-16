@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model\ResourceModel;
+namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel;
 
 class ScheduledTask extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {

@@ -1,11 +1,11 @@
 <?php
-namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Connections;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Connections;
 
 class Create extends \Magento\Backend\App\Action
 {
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Logshub_OpenSubscriptions::save');
+        return $this->_authorization->isAllowed('OpenSubscriptions_OpenSubscriptions::save');
     }
 
     /**

@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Block\Service;
+namespace OpenSubscriptions\OpenSubscriptions\Block\Service;
 
 class Details extends \Magento\Framework\View\Element\Template
 {

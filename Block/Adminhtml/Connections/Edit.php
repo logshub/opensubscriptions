@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Block\Adminhtml\Connections;
+namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Connections;
 
 /**
  * @see http://www.magebuzz.com/blog/magento-2-create-edit-form-backend-part-1/
@@ -35,18 +35,18 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     protected function _construct()
     {
         $this->_objectId = 'connection_id';
-        $this->_blockGroup = 'Logshub_OpenSubscriptions';
+        $this->_blockGroup = 'OpenSubscriptions_OpenSubscriptions';
         $this->_controller = 'adminhtml_connections';
 
         parent::_construct();
 
-        if ($this->_isAllowedAction('Logshub_OpenSubscriptions::save')) {
+        if ($this->_isAllowedAction('OpenSubscriptions_OpenSubscriptions::save')) {
             $this->buttonList->update('save', 'label', __('Save Connection'));
         } else {
             $this->buttonList->remove('save');
         }
 
-        if ($this->_isAllowedAction('Logshub_OpenSubscriptions::connection_delete')) {
+        if ($this->_isAllowedAction('OpenSubscriptions_OpenSubscriptions::connection_delete')) {
             $this->buttonList->update('delete', 'label', __('Delete Connection'));
         } else {
             $this->buttonList->remove('delete');

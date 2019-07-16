@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Observer;
+namespace OpenSubscriptions\OpenSubscriptions\Observer;
 
 class ServiceExecNotification implements \Magento\Framework\Event\ObserverInterface
 {
@@ -30,7 +30,7 @@ class ServiceExecNotification implements \Magento\Framework\Event\ObserverInterf
         
         try {
             $customer = $service->getCustomer();
-            $builder = $this->transportBuilder->setTemplateIdentifier('logshub_opensubscriptions_service_creation')
+            $builder = $this->transportBuilder->setTemplateIdentifier('opensubscriptions_service_creation')
                 ->setTemplateOptions(['area' => 'frontend', 'store' => $this->storeManager->getStore()->getId()])
                 ->setFrom('general')
                 ->addTo($customer->getEmail(), $customer->getFirstname().' '.$customer->getLastname())

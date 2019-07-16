@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Block\Order\View;
+namespace OpenSubscriptions\OpenSubscriptions\Block\Order\View;
 
 class Links extends \Magento\Framework\View\Element\Template
 {
@@ -10,7 +10,7 @@ class Links extends \Magento\Framework\View\Element\Template
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Registry $registry,
-        \Logshub\OpenSubscriptions\Model\ResourceModel\Service $serviceResourceModel,
+        \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service $serviceResourceModel,
         array $data = []
     ) {
         $this->coreRegistry = $registry;
@@ -26,7 +26,7 @@ class Links extends \Magento\Framework\View\Element\Template
         return [];
     }
     
-    public function getViewUrl(\Logshub\OpenSubscriptions\Model\Service $service)
+    public function getViewUrl(\OpenSubscriptions\OpenSubscriptions\Model\Service $service)
     {
         return $this->getUrl('opensubscriptions/service/details', [
             '_query' => [

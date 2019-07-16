@@ -9,7 +9,7 @@
 ## Installation
 
 ```
-composer require logshub/open-subscriptions
+composer require opensubscriptions/open-subscriptions
 php bin/magento setup:upgrade
 php bin/magento module:status
 php bin/magento cache:clean
@@ -21,7 +21,7 @@ php bin/magento indexer:reindex
 ## Uninstalling
 
 ```
-composer remove logshub/open-subscriptions
+composer remove opensubscriptions/open-subscriptions
 php bin/magento setup:upgrade
 php bin/magento cache:clean
 php bin/magento cache:flush

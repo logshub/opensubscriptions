@@ -1,15 +1,15 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model\ResourceModel\ConnectionLog;
+namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ConnectionLog;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
     protected $_idFieldName = 'log_id';
-    protected $_eventPrefix = 'logshub_opensubscriptions_connectionlog_collection';
+    protected $_eventPrefix = 'opensubscriptions_connectionlog_collection';
     protected $_eventObject = 'connectionlog_collection';
 
     protected function _construct()
     {
-        $this->_init('Logshub\OpenSubscriptions\Model\ConnectionLog', 'Logshub\OpenSubscriptions\Model\ResourceModel\ConnectionLog');
+        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ConnectionLog', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ConnectionLog');
     }
 
     public function joinAdmins(array $fields = [])

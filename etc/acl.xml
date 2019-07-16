@@ -3,12 +3,12 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Logshub_OpenSubscriptions::index" title="Open Subscriptions">
-                    <resource id="Logshub_OpenSubscriptions::services" title="Open Subscriptions Services"/>
-                    <resource id="Logshub_OpenSubscriptions::services_save" title="Open Subscriptions Services Save"/>
-                    <resource id="Logshub_OpenSubscriptions::services_new" title="Open Subscriptions Create Service"/>
-                    <resource id="Logshub_OpenSubscriptions::connections" title="Open Subscriptions Connections"/>
-                    <resource id="Logshub_OpenSubscriptions::config" title="Open Subscriptions Configuration"/>
+                <resource id="OpenSubscriptions_OpenSubscriptions::index" title="Open Subscriptions">
+                    <resource id="OpenSubscriptions_OpenSubscriptions::services" title="Open Subscriptions Services"/>
+                    <resource id="OpenSubscriptions_OpenSubscriptions::services_save" title="Open Subscriptions Services Save"/>
+                    <resource id="OpenSubscriptions_OpenSubscriptions::services_new" title="Open Subscriptions Create Service"/>
+                    <resource id="OpenSubscriptions_OpenSubscriptions::connections" title="Open Subscriptions Connections"/>
+                    <resource id="OpenSubscriptions_OpenSubscriptions::config" title="Open Subscriptions Configuration"/>
                 </resource>
             </resource>
         </resources>

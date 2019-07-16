@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Services;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Services;
 
 class Savenew extends \Magento\Backend\App\Action
 {
@@ -17,7 +17,7 @@ class Savenew extends \Magento\Backend\App\Action
     
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Logshub_OpenSubscriptions::services_save');
+        return $this->_authorization->isAllowed('OpenSubscriptions_OpenSubscriptions::services_save');
     }
 
     /**
@@ -40,14 +40,14 @@ class Savenew extends \Magento\Backend\App\Action
             return $resultRedirect->setPath('*/*/');
         }
         
-        $service = $this->_objectManager->create('Logshub\OpenSubscriptions\Model\Service');
+        $service = $this->_objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\Service');
         $service->addData([
             'product_id' => $product->getId(),
             'connection_id' => $product->getOpenSubscriptionsConnectionId(),
             'customer_id' => $customer->getId(),
             'name' => $this->escaper->escapeHtml($data['name']),
             'submodule' => $product->getOpenSubscriptionsSubmodule(),
-            'status' => \Logshub\OpenSubscriptions\Model\Service::PENDING,
+            'status' => \OpenSubscriptions\OpenSubscriptions\Model\Service::PENDING,
             'is_created' => 0
         ]);
 

@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Connections;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Connections;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Backend\App\Action;
@@ -11,7 +11,7 @@ class Delete extends \Magento\Backend\App\Action
         $id = $this->getRequest()->getParam('connection_id');
         if ($id) {
             try {
-                $model = $this->_objectManager->create('Logshub\OpenSubscriptions\Model\Connection');
+                $model = $this->_objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\Connection');
                 $model->load($id);
                 $model->delete();
                 $this->_redirect('*/*/');

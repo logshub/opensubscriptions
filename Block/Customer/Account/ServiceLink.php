@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Block\Customer\Account;
+namespace OpenSubscriptions\OpenSubscriptions\Block\Customer\Account;
 
 use Magento\Customer\Block\Account\SortLinkInterface;
 
@@ -16,7 +16,7 @@ class ServiceLink extends \Magento\Framework\View\Element\Html\Link\Current impl
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\App\DefaultPathInterface $defaultPath,
         \Magento\Customer\Model\Session $customerSession,
-        \Logshub\OpenSubscriptions\Model\ResourceModel\Service $serviceResourceModel,
+        \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service $serviceResourceModel,
         array $data = []
     ) {
         parent::__construct($context, $defaultPath, $data);

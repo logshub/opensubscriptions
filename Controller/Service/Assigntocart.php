@@ -1,7 +1,7 @@
 <?php
-namespace Logshub\OpenSubscriptions\Controller\Service;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Service;
 
-use \Logshub\OpenSubscriptions\Model\Service;
+use \OpenSubscriptions\OpenSubscriptions\Model\Service;
 
 class Assigntocart extends \Magento\Framework\App\Action\Action
 {
@@ -14,7 +14,7 @@ class Assigntocart extends \Magento\Framework\App\Action\Action
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
         \Magento\Framework\Registry $registry,
         \Magento\Customer\Model\Session $customerSession,
-        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory
+        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory
     ) {
         $this->resultJsonFactory = $resultJsonFactory;
         $this->customerSession = $customerSession;

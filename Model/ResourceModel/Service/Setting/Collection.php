@@ -1,15 +1,15 @@
 <?php
-namespace Logshub\OpenSubscriptions\Model\ResourceModel\Service\Setting;
+namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Setting;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
     protected $_idFieldName = 'setting_id';
-    protected $_eventPrefix = 'logshub_opensubscriptions_service_setting_collection';
+    protected $_eventPrefix = 'opensubscriptions_service_setting_collection';
     protected $_eventObject = 'service_setting_collection';
 
     protected function _construct()
     {
-        $this->_init('Logshub\OpenSubscriptions\Model\Service\Setting', 'Logshub\OpenSubscriptions\Model\ResourceModel\Service\Setting');
+        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\Service\Setting', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Setting');
     }
 
     public function addServiceFiler(int $serviceId)

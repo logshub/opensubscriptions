@@ -1,6 +1,6 @@
 <?php
 
-namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Services;
+namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Services;
 
 class Exec extends \Magento\Backend\App\Action
 {
@@ -12,8 +12,8 @@ class Exec extends \Magento\Backend\App\Action
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
         \Magento\Framework\Event\ManagerInterface $eventManager,
-        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory,
-        \Logshub\OpenSubscriptions\Model\ActivityLogFactory $activityLogFactory
+        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory,
+        \OpenSubscriptions\OpenSubscriptions\Model\ActivityLogFactory $activityLogFactory
     ) {
         parent::__construct($context);
         $this->resultJsonFactory = $resultJsonFactory;
@@ -68,7 +68,7 @@ class Exec extends \Magento\Backend\App\Action
             return $result->setData([
                 'success' => $commandResult
             ]);
-        } catch (\Logshub\OpenSubscriptions\Exception\CommandException $e) {
+        } catch (\OpenSubscriptions\OpenSubscriptions\Exception\CommandException $e) {
             $activityLog->setSuccess(false);
             $activityLog->setMessage($e->getMessage());
             $activityLog->save();

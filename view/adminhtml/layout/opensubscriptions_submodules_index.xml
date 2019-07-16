@@ -3,7 +3,7 @@
     <update handle="editor"/>
     <body>
         <referenceContainer name="content">
-            <block class="Logshub\OpenSubscriptions\Block\Adminhtml\Submodules" name="opensubscriptions_submodules" />
+            <block class="OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Submodules" name="opensubscriptions_submodules" />
         </referenceContainer>
         <referenceContainer name="left" remove="true"/>
     </body>

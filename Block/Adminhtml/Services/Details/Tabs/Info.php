@@ -1,7 +1,7 @@
 <?php
-namespace Logshub\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs;
+namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs;
 
-use Logshub\OpenSubscriptions\Model\Service;
+use OpenSubscriptions\OpenSubscriptions\Model\Service;
 
 class Info extends \Magento\Framework\View\Element\Template
 {
@@ -22,7 +22,7 @@ class Info extends \Magento\Framework\View\Element\Template
         return $this->coreRegistry->registry('current_service');
     }
 
-    public function getServiceSettings(): \Logshub\OpenSubscriptions\Model\ResourceModel\Service\Setting\Collection
+    public function getServiceSettings(): \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Setting\Collection
     {
         return $this->getService()->getSettingsCollection();
     }

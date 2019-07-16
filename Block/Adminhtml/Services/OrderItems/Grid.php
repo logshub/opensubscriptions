@@ -1,5 +1,5 @@
 <?php
-namespace Logshub\OpenSubscriptions\Block\Adminhtml\Services\OrderItems;
+namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\OrderItems;
 
 class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
 {
@@ -32,7 +32,7 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
     {
         // TODO: MINOR better way ?
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $collection = $objectManager->create('Logshub\OpenSubscriptions\Model\ResourceModel\Sales\Order\Item\Collection');
+        $collection = $objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Sales\Order\Item\Collection');
         $collection->removeAllFieldsFromSelect();
         $collection->addFieldToSelect(['item_id', 'name', 'base_price', 'qty_ordered']);
         $collection->joinOrders(['increment_id', 'status', 'customer_id', 'base_grand_total', 'created_at', 'total_qty_ordered']);
