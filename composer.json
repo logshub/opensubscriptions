@@ -1,0 +1,18 @@
+{
+    "name": "open-subscriptions/open-subscriptions",
+    "description": "Open Subscriptions",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        
+    },
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Logshub\\OpenSubscriptions\\": ""
+        }
+    }
+}

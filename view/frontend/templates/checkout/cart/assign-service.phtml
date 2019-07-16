@@ -1,0 +1,44 @@
+<?php
+$services = $this->getServices();
+if (empty($services) || !count($services)){
+    return '';
+}
+$selectId = 'open-subscriptions-my-service-'.$this->getItem()->getId();
+$val = $this->getAssignedServiceFakeId();
+?>
+
+<?php echo __('Service to renew: '); ?>
+
+<select id="<?php echo $selectId; ?>">
+    <option><?php echo __('-- Select --'); ?></option>
+    <?php foreach ($services as $service){ ?>
+        <option value="<?php echo $service->getFakeId(); ?>" <?php echo $service->getFakeId() == $val ? 'selected="selected"' : ''; ?>>
+            <?php echo $this->getServiceOptionName($service); ?>
+        </option>
+    <?php } ?>
+</select>
+
+<small style="color:gray;"><?php echo __('Leave empty for new service instance.'); ?></small>
+
+<script type="text/javascript">
+require(['jquery'], function($){
+    $(document).ready(function(){
+        var $select = $('#<?php echo $selectId; ?>');
+        $select.on('change', function(){
+            $.ajax({
+                showLoader: true,
+                url: '<?php echo $this->getAssignActionUrl(); ?>',
+                data: {
+                    "service_id":$select.val()
+                },
+                type: "POST",
+                dataType: 'json'
+            }).done(function (data) {
+                if (data.status !== 1){
+                    // error
+                }
+            });
+        });
+    });
+});
+</script>

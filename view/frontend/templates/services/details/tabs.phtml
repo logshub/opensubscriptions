@@ -1,0 +1,15 @@
+<?php
+$activeTabId = $block->getActiveTabId();
+?>
+
+<div class="content block-collapsible-nav-content" id="block-collapsible-nav">
+    <ul class="nav items">
+        <?php foreach ($this->getTabs() as $tab): ?>
+            <?php if ($tab->getId() == $activeTabId): ?>
+                <li class="nav item current"><strong><?php echo $tab->getLabel(); ?></strong></li>
+            <?php else: ?>
+                <li class="nav item"><a href="<?php echo $tab->getUrl(); ?>"><?php echo $tab->getLabel(); ?></a></li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</div>

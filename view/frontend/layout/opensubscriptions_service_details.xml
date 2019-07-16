@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\Framework\View\Element\Template" name="sidebar.main.account_nav" template="Magento_Theme::html/collapsible.phtml" before="-">
+                <arguments>
+                    <argument name="block_title" translate="true" xsi:type="string">General Informations</argument>
+                    <argument name="block_css" xsi:type="string">block-collapsible-nav</argument>
+                </arguments>
+                <block class="Logshub\OpenSubscriptions\Block\Service\Details\Tabs" name="opensubscriptions_service_navigation" before="-" />
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Logshub\OpenSubscriptions\Block\Service\Details"
+                   name="opensubscriptions.service.details"
+                   cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>

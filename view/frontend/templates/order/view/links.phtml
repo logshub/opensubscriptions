@@ -1,0 +1,16 @@
+<?php
+$services = $block->getServices();
+?>
+
+<?php foreach ($services as $service) { ?>
+    <div class="messages">
+        <div class="message-warning warning message" data-ui-id="message-warning">
+            <div>
+                <?= __('There is associated <strong>'.$service->getProduct()->getName().'</strong> service with this order:') ?>
+                <a href="<?= $block->getViewUrl($service) ?>" class="action view">
+                    <span><?= __('View details') ?></span>
+                </a>
+            </div>
+        </div>
+    </div>
+<?php } ?>

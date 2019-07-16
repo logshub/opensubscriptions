@@ -1,0 +1,68 @@
+<?php
+$services = $block->getServices();
+$products = $block->getProducts();
+
+// TODO: count is heavy for collections
+// TODO: buy new button
+?>
+
+<?php if ($services && count($services)): ?>
+    <div class="table-wrapper orders-history">
+        <table class="data table table-order-items history" id="my-orders-table">
+            <caption class="table-caption"><?= /* @escapeNotVerified */ __('Services') ?></caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="col id" style="width: 63px;"><?= __('Service #') ?></th>
+                    <th scope="col" class="col product"><?= __('Product') ?></th>
+                    <th scope="col" class="col status" style="width: 100px;"><?= __('Status') ?></th>
+                    <th scope="col" class="col date" style="width: 125px;"><?= __('Expire') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($services as $service): ?>
+                    <tr>
+                        <td class="col id">
+                            <a href="<?= $block->getViewUrl($service) ?>" class="action view">
+                                <?= $service->getFakeId(); ?>
+                            </a>
+                        </td>
+                        <td class="col total">
+                            <a href="<?= $block->getViewUrl($service) ?>" class="action view">
+                                <?= $service->getProduct()->getName() . ($service->getName() ? ' ('.$service->getName().')' : ''); ?>
+                            </a>
+                        </td>
+                        <td class="col status"><strong style="<?= $service->getStatus() == 'active' ? 'color:green;' : '' ?>"><?= $service->getStatus() ?></strong></td>
+                        <td class="col date">
+                            <span style="color:gray;"><?= substr($service->getExpireAt(), 0, 10); ?></span>
+                            <?php if ($service->canRenew()){ ?>
+                                <a href="<?= $this->getUrl('*/*/renew', ['_query' => ['service_id' => $service->getFakeId(), ]]); ?>" class="btn btn-primary"><?= __('Renew') ?></a>
+                            <?php } ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <!-- <div class="order-products-toolbar toolbar bottom"><?= $block->getPagerHtml() ?></div> -->
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?= __('You have no services.') ?></span></div>
+    
+    <?php if ($products && count($products)): ?>
+        <h3>Buy new services</h3>
+        <div class="table-wrapper orders-history">
+            <table class="data table table-order-items history" id="my-orders-table">
+                <tbody>
+                    <?php foreach ($products as $prod): ?>
+                        <tr>
+                            <td class="col id">
+                                <a href="<?php echo $prod->getProductUrl(); ?>"><?= $prod->getName(); ?></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+<?php endif ?>

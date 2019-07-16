@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+          <add id="Logshub_OpenSubscriptions::index"
+               title="Open Subscriptions"
+               module="Logshub_OpenSubscriptions"
+               sortOrder="51"
+               resource="Logshub_OpenSubscriptions::index" />
+          <add id="Logshub_OpenSubscriptions::services"
+               title="Services"
+               module="Logshub_OpenSubscriptions"
+               sortOrder="10"
+               resource="Logshub_OpenSubscriptions::services"
+               action="opensubscriptions/services"
+               parent="Logshub_OpenSubscriptions::index" />
+          <add id="Logshub_OpenSubscriptions::connections"
+               title="Connections"
+               module="Logshub_OpenSubscriptions"
+               sortOrder="12"
+               resource="Logshub_OpenSubscriptions::connections"
+               action="opensubscriptions/connections"
+               parent="Logshub_OpenSubscriptions::index" />
+          <add id="Logshub_OpenSubscriptions::submodules"
+               title="Submodules"
+               module="Logshub_OpenSubscriptions"
+               sortOrder="15"
+               resource="Logshub_OpenSubscriptions::submodules"
+               action="opensubscriptions/submodules"
+               parent="Logshub_OpenSubscriptions::index" />
+    </menu>
+</config>

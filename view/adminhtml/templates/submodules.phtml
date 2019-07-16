@@ -1,0 +1,20 @@
+<?php
+$layout = $block->getLayout();
+?>
+
+<?php foreach ($block->getSubmodules() as $submodule){ ?>
+    <section class="admin__page-section order-view-account-information">
+        <div class="admin__page-section-title">
+            <span class="title"><?php echo $submodule->getId(); ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <?php
+            $helpBlock = $submodule->getHelpBlock();
+            if ($helpBlock){
+                echo $layout->createBlock($helpBlock)->toHtml();
+            }
+            ?>
+        </div>
+    </section>
+    
+<?php } ?>

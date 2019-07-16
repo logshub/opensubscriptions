@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="styles"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Logshub\OpenSubscriptions\Block\Adminhtml\Connections" name="opensubscriptions_connections_grid">
+                <block class="Magento\Backend\Block\Widget\Grid" name="opensubscriptions_connections_grid.grid" as="grid">
+                    <arguments>
+                        <argument name="id" xsi:type="string">connection_id</argument>
+                        <argument name="dataSource" xsi:type="object">Logshub\OpenSubscriptions\Model\ResourceModel\Connection\Collection</argument>
+                        <argument name="default_sort" xsi:type="string">connection_id</argument>
+                        <argument name="default_dir" xsi:type="string">DESC</argument>
+                        <argument name="save_parameters_in_session" xsi:type="string">1</argument>
+                    </arguments>
+                    <!-- <block class="Magento\Backend\Block\Widget\Grid\Massaction" name="mageplaza.helloWorld.massaction" as="grid.massaction">
+                        <arguments>
+                            <argument name="massaction_id_field" xsi:type="string">post_id</argument>
+                            <argument name="form_field_name" xsi:type="string">ids</argument>
+                            <argument name="use_select_all" xsi:type="string">1</argument>
+                            <argument name="options" xsi:type="array">
+                                <item name="disable" xsi:type="array">
+                                    <item name="label" xsi:type="string" translate="true">Delete</item>
+                                    <item name="url" xsi:type="string">*/*/massDelete</item>
+                                </item>
+                            </argument>
+                        </arguments>
+                    </block> -->
+                    <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="opensubscriptions_connections_grid.grid.columnSet" as="grid.columnSet">
+                        <arguments>
+                            <argument name="rowUrl" xsi:type="array">
+                                <item name="path" xsi:type="string">*/*/edit</item>
+                                <item name="extraParamsTemplate" xsi:type="array">
+                                    <item name="connection_id" xsi:type="string">getConnectionId</item>
+                                </item>
+                            </argument>
+                        </arguments>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="connection_id">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">connection_id</argument>
+                                <argument name="index" xsi:type="string">connection_id</argument>
+                                <argument name="type" xsi:type="string">text</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="name">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Name</argument>
+                                <argument name="index" xsi:type="string">name</argument>
+                                <argument name="type" xsi:type="string">text</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="submodule">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Submodule</argument>
+                                <argument name="index" xsi:type="string">submodule</argument>
+                                <argument name="type" xsi:type="string">text</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="hostname">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Hostname</argument>
+                                <argument name="index" xsi:type="string">hostname</argument>
+                                <argument name="type" xsi:type="string">text</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="enabled">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Enabled</argument>
+                                <argument name="index" xsi:type="string">enabled</argument>
+                                <argument name="type" xsi:type="string">text</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" as="created_at">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Created</argument>
+                                <argument name="index" xsi:type="string">created_at</argument>
+                                <argument name="type" xsi:type="string">datetime</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

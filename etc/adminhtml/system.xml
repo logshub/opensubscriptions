@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="opensubscriptions" translate="label" sortOrder="1000">
+            <label>Open Subscriptions</label>
+        </tab>
+        <section id="opensubscriptions_services" translate="label" sortOrder="420" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Services</label>
+            <tab>opensubscriptions</tab>
+            <resource>Logshub_OpenSubscriptions::config</resource>
+            <group id="creation" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Creation</label>
+                <field id="product_id" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Default Product ID</label>
+                    <comment>Used on Services &gt; Create New Service form</comment>
+                </field>
+                <field id="customer_id" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Default Customer ID</label>
+                    <comment>Used on Services &gt; Create New Service form</comment>
+                </field>
+            </group>
+        </section>
+        <section id="opensubscriptions_products" translate="label" sortOrder="430" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Products</label>
+            <tab>opensubscriptions</tab>
+            <resource>Logshub_OpenSubscriptions::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="client_dashboard_prods" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Products in client's dashboard</label>
+                    <comment>One ID per line</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

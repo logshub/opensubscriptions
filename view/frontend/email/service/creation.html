@@ -1,0 +1,17 @@
+{{template config_path="design/email/header_template"}}
+
+<h4>Your service #{{trans "%id" id=$service_fake_id}} has been created!</h4>
+<p><a href="{{trans "%url_login" url_login=$url_login}}">{{trans "Login"}}</a> to manage it.</p>
+
+<table>
+    <tr>
+        <td style="padding-right:15px;">{{trans "Product"}}</td>
+        <td>{{trans "%product" product=$product_name}}</td>
+    </tr>
+    <tr>
+        <td style="padding-right:15px;">{{trans "Status"}}</td>
+        <td>{{trans "%status" status=$service_status}}</td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

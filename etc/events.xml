@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!--
+    finally updating service's expiry_at field or creating new one
+    -->
+    <event name="sales_order_invoice_pay">
+        <observer name="logshub_opensubscriptions_after_paid_invoice" instance="Logshub\OpenSubscriptions\Observer\InvoicePaid"/>
+    </event>
+    <!-- sending email notifications (create) -->
+    <event name="opensubscriptions_service_exec_after">
+        <observer name="logshub_opensubscriptions_service_notifications" instance="Logshub\OpenSubscriptions\Observer\ServiceExecNotification" />
+    </event>
+</config>

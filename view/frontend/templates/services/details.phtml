@@ -1,0 +1,63 @@
+<?php
+$service = $block->getService();
+// TODO: renew button
+
+$expiresIn = '';
+if ($service->getExpireAt()){
+    $dDiff = (new \DateTime())->diff(new \DateTime($service->getExpireAt()));
+    if ($dDiff->invert === 0){
+        $color = 'black';
+        if ($dDiff->days < 5){
+            $color = 'red';
+        } elseif ($dDiff->days < 30){
+            $color = '#808000';
+        }
+        $expiresIn = '<strong style="color:'.$color.';">('.$dDiff->days . ' ' . __('days').')</strong>';
+    } else {
+        $expiresIn = '<strong style="color:red;">(' . __('expired').')</strong>';
+    }
+}
+?>
+
+<?php if ($service->getStatus() == \Logshub\OpenSubscriptions\Model\Service::PENDING): ?>
+    <div class="messages">
+        <div class="message-warning warning message" data-ui-id="message-warning">
+            <div>
+                <?= __('Thank you for ordering service. We will accept it as soon as possible.') ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<div class="table-wrapper orders-history">
+    <table class="data table table-order-items history" id="my-orders-table">
+        <caption class="table-caption"><?= __('Service Details') ?></caption>
+        <tbody>
+            <tr>
+                <td class="col id" style="width:200px;">ID</td>
+                <td class="col id"><?= $service->getFakeId(); ?></td>
+            </tr>
+            <tr>
+                <td class="col total">Product</td>
+                <td class="col total"><?= $service->getProduct()->getName() . ($service->getName() ? ' ('.$service->getName().')' : ''); ?></td>
+            </tr>
+            <tr>
+                <td class="col status">Status</td>
+                <td class="col status"><strong style="<?= $service->getStatus() == 'active' ? 'color:green;' : '' ?>"><?= $service->getStatus() ?></strong></td>
+            </tr>
+            <tr>
+                <td class="col date">Creation Date</td>
+                <td class="col date"><span style="color:gray;"><?= $service->getCreatedAt(); ?></span></td>
+            </tr>
+            <tr>
+                <td class="col date">Expiration Date</td>
+                <td class="col date">
+                    <span style="color:gray;"><?= $service->getExpireAt(); ?></span>
+                    <?php echo $expiresIn; ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <?php echo $block->getChildHtml('opensubscriptions.service.details.' . $service->getSubmodule()); ?>
+</div>
