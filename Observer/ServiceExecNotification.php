@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Observer;
+namespace Logshub\OpenSubscriptions\Observer;
 
 class ServiceExecNotification implements \Magento\Framework\Event\ObserverInterface
 {

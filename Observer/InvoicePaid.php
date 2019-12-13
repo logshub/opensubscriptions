@@ -1,7 +1,7 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Observer;
+namespace Logshub\OpenSubscriptions\Observer;
 
-use OpenSubscriptions\OpenSubscriptions\Model\Service;
+use Logshub\OpenSubscriptions\Model\Service;
 
 /**
  * Order Item with selected service -> update expiry date
@@ -71,7 +71,7 @@ class InvoicePaid implements \Magento\Framework\Event\ObserverInterface
     {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 
-        return $objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\Service');
+        return $objectManager->create('Logshub\OpenSubscriptions\Model\Service');
     }
 
     /**

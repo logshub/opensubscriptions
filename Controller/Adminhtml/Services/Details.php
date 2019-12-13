@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Services;
+namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Services;
 
 class Details extends \Magento\Backend\App\Action
 {
@@ -11,7 +11,7 @@ class Details extends \Magento\Backend\App\Action
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Framework\Registry $registry,
-        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory
+        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory
     ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
@@ -34,7 +34,7 @@ class Details extends \Magento\Backend\App\Action
 
         $this->coreRegistry->register('current_service', $service);
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('OpenSubscriptions_OpenSubscriptions::index');
+        $resultPage->setActiveMenu('Logshub_OpenSubscriptions::index');
         $resultPage->getConfig()->getTitle()->prepend((__('Service Details')));
 
         return $resultPage;

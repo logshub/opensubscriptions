@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Setting;
+namespace Logshub\OpenSubscriptions\Model\ResourceModel\Service\Setting;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -9,7 +9,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\Service\Setting', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Setting');
+        $this->_init('Logshub\OpenSubscriptions\Model\Service\Setting', 'Logshub\OpenSubscriptions\Model\ResourceModel\Service\Setting');
     }
 
     public function addServiceFiler(int $serviceId)

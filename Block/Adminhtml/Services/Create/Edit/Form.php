@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\Create\Edit;
+namespace Logshub\OpenSubscriptions\Block\Adminhtml\Services\Create\Edit;
 
 class Form extends \Magento\Backend\Block\Widget\Form\Generic
 {

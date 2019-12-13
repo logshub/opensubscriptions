@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Exception;
+namespace Logshub\OpenSubscriptions\Exception;
 
 class SubmoduleException extends \Exception
 {

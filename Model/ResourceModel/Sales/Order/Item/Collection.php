@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Sales\Order\Item;
+namespace Logshub\OpenSubscriptions\Model\ResourceModel\Sales\Order\Item;
 
 class Collection extends \Magento\Sales\Model\ResourceModel\Order\Item\Collection
 {

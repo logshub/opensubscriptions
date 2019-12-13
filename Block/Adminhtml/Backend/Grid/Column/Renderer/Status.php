@@ -1,7 +1,7 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Backend\Grid\Column\Renderer;
+namespace Logshub\OpenSubscriptions\Block\Adminhtml\Backend\Grid\Column\Renderer;
 
-use OpenSubscriptions\OpenSubscriptions\Model\Service;
+use Logshub\OpenSubscriptions\Model\Service;
 
 class Status extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
 {

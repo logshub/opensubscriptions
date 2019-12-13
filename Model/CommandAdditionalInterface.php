@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model;
+namespace Logshub\OpenSubscriptions\Model;
 
 interface CommandAdditionalInterface extends CommandInterface
 {

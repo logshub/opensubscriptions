@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Controller\Service;
+namespace Logshub\OpenSubscriptions\Controller\Service;
 
 class Index extends \Magento\Framework\App\Action\Action
 {
@@ -18,8 +18,8 @@ class Index extends \Magento\Framework\App\Action\Action
         \Magento\Framework\Registry $registry,
         \Magento\Customer\Model\Session $customerSession,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $collectionFactory,
-        \OpenSubscriptions\OpenSubscriptions\Helper\Data $helperData,
-        \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\CollectionFactory $serviceCollectionFactory
+        \Logshub\OpenSubscriptions\Helper\Data $helperData,
+        \Logshub\OpenSubscriptions\Model\ResourceModel\Service\CollectionFactory $serviceCollectionFactory
     ) {
         $this->pageFactory = $pageFactory;
         $this->coreRegistry = $registry;

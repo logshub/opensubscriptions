@@ -7,11 +7,11 @@
                     <argument name="block_title" translate="true" xsi:type="string">General Informations</argument>
                     <argument name="block_css" xsi:type="string">block-collapsible-nav</argument>
                 </arguments>
-                <block class="OpenSubscriptions\OpenSubscriptions\Block\Service\Details\Tabs" name="opensubscriptions_service_navigation" before="-" />
+                <block class="Logshub\OpenSubscriptions\Block\Service\Details\Tabs" name="opensubscriptions_service_navigation" before="-" />
             </block>
         </referenceContainer>
         <referenceContainer name="content">
-            <block class="OpenSubscriptions\OpenSubscriptions\Block\Service\Details"
+            <block class="Logshub\OpenSubscriptions\Block\Service\Details"
                    name="opensubscriptions.service.details"
                    cacheable="false" />
         </referenceContainer>

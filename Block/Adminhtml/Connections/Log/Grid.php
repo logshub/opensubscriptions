@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Connections\Log;
+namespace Logshub\OpenSubscriptions\Block\Adminhtml\Connections\Log;
 
 class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
 {
@@ -9,7 +9,7 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
         \Magento\Backend\Block\Widget\Context $context,
         \Magento\Backend\Helper\Data $backendHelper,
         \Magento\Framework\Registry $registry,
-        \OpenSubscriptions\OpenSubscriptions\Model\ConnectionLogFactory $connectionLogFactory,
+        \Logshub\OpenSubscriptions\Model\ConnectionLogFactory $connectionLogFactory,
         array $data = []
     ) {
         $this->coreRegistry = $registry;

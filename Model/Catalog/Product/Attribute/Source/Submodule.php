@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\Catalog\Product\Attribute\Source;
+namespace Logshub\OpenSubscriptions\Model\Catalog\Product\Attribute\Source;
 
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 use Magento\Framework\Data\OptionSourceInterface;
@@ -18,7 +18,7 @@ class Submodule extends AbstractSource implements OptionSourceInterface
                 'label' => '-',
                 'value' => 0,
             ]];
-            foreach (\OpenSubscriptions\OpenSubscriptions\Model\Submodule::allIds() as $id) {
+            foreach (\Logshub\OpenSubscriptions\Model\Submodule::allIds() as $id) {
                 $this->_options[] = [
                     'label' => $id,
                     'value' => $id,

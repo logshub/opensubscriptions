@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Connections\Edit;
+namespace Logshub\OpenSubscriptions\Block\Adminhtml\Connections\Edit;
 
 class Form extends \Magento\Backend\Block\Widget\Form\Generic
 {
@@ -128,7 +128,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
     {
         // TODO: from source model
         $options = ['' => ''];
-        foreach (\OpenSubscriptions\OpenSubscriptions\Model\Submodule::allIds() as $id) {
+        foreach (\Logshub\OpenSubscriptions\Model\Submodule::allIds() as $id) {
             $options[$id] = $id;
         }
 

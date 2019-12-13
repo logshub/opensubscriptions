@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Services;
+namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Services;
 
 class Scheduledtasks extends \Magento\Backend\App\Action
 {
@@ -14,7 +14,7 @@ class Scheduledtasks extends \Magento\Backend\App\Action
         \Magento\Framework\Controller\Result\RawFactory $resultRawFactory,
         \Magento\Framework\View\LayoutFactory $layoutFactory,
         \Magento\Framework\Registry $registry,
-        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory
+        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory
     ) {
         parent::__construct($context);
         $this->resultRawFactory = $resultRawFactory;
@@ -42,7 +42,7 @@ class Scheduledtasks extends \Magento\Backend\App\Action
         $this->coreRegistry->register('current_service', $service);
 
         $layout = $this->layoutFactory->create();
-        $html = $layout->createBlock(\OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\ScheduledTasks::class)->toHtml();
+        $html = $layout->createBlock(\Logshub\OpenSubscriptions\Block\Adminhtml\Services\ScheduledTasks::class)->toHtml();
         $resultRaw = $this->resultRawFactory->create();
         $resultRaw->setContents($html);
 

@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection\Setting;
+namespace Logshub\OpenSubscriptions\Model\ResourceModel\Connection\Setting;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -9,7 +9,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\Connection\Setting', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection\Setting');
+        $this->_init('Logshub\OpenSubscriptions\Model\Connection\Setting', 'Logshub\OpenSubscriptions\Model\ResourceModel\Connection\Setting');
     }
 
     public function addConnectionFiler(int $connectionId)

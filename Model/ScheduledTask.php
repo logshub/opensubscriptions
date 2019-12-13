@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model;
+namespace Logshub\OpenSubscriptions\Model;
 
 class ScheduledTask extends \Magento\Framework\Model\AbstractModel
 {
@@ -8,6 +8,6 @@ class ScheduledTask extends \Magento\Framework\Model\AbstractModel
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ScheduledTask');
+        $this->_init('Logshub\OpenSubscriptions\Model\ResourceModel\ScheduledTask');
     }
 }

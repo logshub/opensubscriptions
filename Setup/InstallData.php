@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Setup;
+namespace Logshub\OpenSubscriptions\Setup;
 
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;
@@ -67,7 +67,7 @@ class InstallData implements InstallDataInterface
                 'label' => 'Submodule',
                 'input' => 'select',
                 'class' => '',
-                'source' => \OpenSubscriptions\OpenSubscriptions\Model\Catalog\Product\Attribute\Source\Submodule::class,
+                'source' => \Logshub\OpenSubscriptions\Model\Catalog\Product\Attribute\Source\Submodule::class,
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible' => true,
                 'required' => true,
@@ -93,7 +93,7 @@ class InstallData implements InstallDataInterface
                 'label' => 'Connection ID',
                 'input' => 'select',
                 'class' => '',
-                'source' => \OpenSubscriptions\OpenSubscriptions\Model\Catalog\Product\Attribute\Source\ConnectionId::class,
+                'source' => \Logshub\OpenSubscriptions\Model\Catalog\Product\Attribute\Source\ConnectionId::class,
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible' => true,
                 'required' => false,

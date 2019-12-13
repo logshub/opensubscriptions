@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Submodules;
+namespace Logshub\OpenSubscriptions\Block\Adminhtml\Submodules;
 
 class Tabs extends \Magento\Backend\Block\Widget\Tabs
 {

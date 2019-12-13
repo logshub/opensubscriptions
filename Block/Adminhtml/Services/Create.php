@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services;
+namespace Logshub\OpenSubscriptions\Block\Adminhtml\Services;
 
 class Create extends \Magento\Backend\Block\Widget\Form\Container
 {
@@ -32,7 +32,7 @@ class Create extends \Magento\Backend\Block\Widget\Form\Container
     protected function _construct()
     {
         $this->_objectId = 'service_id';
-        $this->_blockGroup = 'OpenSubscriptions_OpenSubscriptions';
+        $this->_blockGroup = 'Logshub_OpenSubscriptions';
         $this->_controller = 'adminhtml_services_create';
 
         parent::_construct();

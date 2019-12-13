@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model;
+namespace Logshub\OpenSubscriptions\Model;
 
 class Connection extends \Magento\Framework\Model\AbstractModel
 {
@@ -7,7 +7,7 @@ class Connection extends \Magento\Framework\Model\AbstractModel
     protected $_eventPrefix = 'opensubscriptions_connection';
 
     /**
-     * @var \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection\Setting\Collection
+     * @var \Logshub\OpenSubscriptions\Model\ResourceModel\Connection\Setting\Collection
      */
     protected $settingsCollection;
     /**
@@ -18,7 +18,7 @@ class Connection extends \Magento\Framework\Model\AbstractModel
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection');
+        $this->_init('Logshub\OpenSubscriptions\Model\ResourceModel\Connection');
     }
 
     public function setSettings(array $settings)
@@ -42,12 +42,12 @@ class Connection extends \Magento\Framework\Model\AbstractModel
         return $default;
     }
  
-    public function getSettingsCollection(): \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection\Setting\Collection
+    public function getSettingsCollection(): \Logshub\OpenSubscriptions\Model\ResourceModel\Connection\Setting\Collection
     {
         if ($this->settingsCollection === null) {
             // TODO: better way ?
             $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-            $this->settingsCollection = $objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection\Setting\Collection')
+            $this->settingsCollection = $objectManager->create('Logshub\OpenSubscriptions\Model\ResourceModel\Connection\Setting\Collection')
                 ->addConnectionFiler($this->getConnectionId());
         }
 
@@ -64,7 +64,7 @@ class Connection extends \Magento\Framework\Model\AbstractModel
     public function addLog(Service $service, string $action, int $responseCode, string $request, string $response)
     {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $connectionLog = $objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\ConnectionLog');
+        $connectionLog = $objectManager->create('Logshub\OpenSubscriptions\Model\ConnectionLog');
         $connectionLog->setData([
             'created_at' => date('Y-m-d H:i:s'),
             'admin_id' => null, // TODO: from session ?? save only in activity log?
@@ -90,7 +90,7 @@ class Connection extends \Magento\Framework\Model\AbstractModel
             return;
         }
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $settingsModel = $objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\Connection\Setting');
+        $settingsModel = $objectManager->create('Logshub\OpenSubscriptions\Model\Connection\Setting');
 
         $definitions = $this->getSubmoduleConnection()->getSettingsDefinitions();
         foreach ($definitions as $def) {

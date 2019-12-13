@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml;
+namespace Logshub\OpenSubscriptions\Block\Adminhtml;
 
 class Submodules extends \Magento\Framework\View\Element\Template
 {

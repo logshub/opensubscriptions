@@ -4,10 +4,10 @@
     finally updating service's expiry_at field or creating new one
     -->
     <event name="sales_order_invoice_pay">
-        <observer name="opensubscriptions_after_paid_invoice" instance="OpenSubscriptions\OpenSubscriptions\Observer\InvoicePaid"/>
+        <observer name="opensubscriptions_after_paid_invoice" instance="Logshub\OpenSubscriptions\Observer\InvoicePaid"/>
     </event>
     <!-- sending email notifications (create) -->
     <event name="opensubscriptions_service_exec_after">
-        <observer name="opensubscriptions_service_notifications" instance="OpenSubscriptions\OpenSubscriptions\Observer\ServiceExecNotification" />
+        <observer name="opensubscriptions_service_notifications" instance="Logshub\OpenSubscriptions\Observer\ServiceExecNotification" />
     </event>
 </config>

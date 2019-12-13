@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model;
+namespace Logshub\OpenSubscriptions\Model;
 
 interface CommandInterface
 {
@@ -7,7 +7,7 @@ interface CommandInterface
      * Execution of this command.
      * Should return true, or throw exception
      * @return bool
-     * @throws OpenSubscriptions\OpenSubscriptions\Exception\CommandException
+     * @throws Logshub\OpenSubscriptions\Exception\CommandException
      */
     public function exec(Service $service): bool;
 

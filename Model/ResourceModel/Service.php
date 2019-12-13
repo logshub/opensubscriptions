@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel;
+namespace Logshub\OpenSubscriptions\Model\ResourceModel;
 
 class Service extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
@@ -36,15 +36,15 @@ class Service extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     /**
      * 
      * @param int $orderId
-     * @return \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Collection
+     * @return \Logshub\OpenSubscriptions\Model\ResourceModel\Service\Collection
      */
-    public function getOrderServices(int $orderId): \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Collection
+    public function getOrderServices(int $orderId): \Logshub\OpenSubscriptions\Model\ResourceModel\Service\Collection
     {
         $oaItemTableName = $this->_resources->getTableName('opensubscriptions_services_order_items');
         $orderItemsTableName = $this->_resources->getTableName('sales_order_item');
         
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $collection = $objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service\Collection');
+        $collection = $objectManager->create('Logshub\OpenSubscriptions\Model\ResourceModel\Service\Collection');
         $collection->getSelect()
             ->join(['oaoi' => $oaItemTableName], 'main_table.service_id = oaoi.service_id', [])
             ->join(['oi' => $orderItemsTableName], 'oi.item_id = oaoi.item_id', [])
@@ -94,6 +94,6 @@ class Service extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
             WHERE customer_id = ? AND status != ?;
         ';
 
-        return (int)$this->getConnection()->fetchOne($sql, [$customerId, \OpenSubscriptions\OpenSubscriptions\Model\Service::DELETED]);
+        return (int)$this->getConnection()->fetchOne($sql, [$customerId, \Logshub\OpenSubscriptions\Model\Service::DELETED]);
     }
 }

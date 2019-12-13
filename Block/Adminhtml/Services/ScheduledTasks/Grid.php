@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\ScheduledTasks;
+namespace Logshub\OpenSubscriptions\Block\Adminhtml\Services\ScheduledTasks;
 
 class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
 {
@@ -9,7 +9,7 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
     public function __construct(
         \Magento\Backend\Block\Widget\Context $context,
         \Magento\Backend\Helper\Data $backendHelper,
-        \OpenSubscriptions\OpenSubscriptions\Model\ScheduledTaskFactory $scheduledTaskFactory,
+        \Logshub\OpenSubscriptions\Model\ScheduledTaskFactory $scheduledTaskFactory,
         \Magento\Framework\Registry $registry,
         array $data = []
     ) {

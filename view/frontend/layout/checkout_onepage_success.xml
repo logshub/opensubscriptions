@@ -4,7 +4,7 @@
         <referenceContainer name="order.success.additional.info">
             <block class="Magento\Framework\View\Element\Template"
                    name="opensubscriptions.checkout.success.info"
-                   template="OpenSubscriptions_OpenSubscriptions::checkout/onepage/success/oa_info.phtml" />
+                   template="Logshub_OpenSubscriptions::checkout/onepage/success/oa_info.phtml" />
         </referenceContainer>
     </body>
 </page>

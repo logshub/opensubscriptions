@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\Catalog\Product\Attribute\Source;
+namespace Logshub\OpenSubscriptions\Model\Catalog\Product\Attribute\Source;
 
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 use Magento\Framework\Data\OptionSourceInterface;
@@ -9,7 +9,7 @@ class ConnectionId extends AbstractSource implements OptionSourceInterface
     private $connectionCollectionFactory;
 
     public function __construct(
-        \OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection\CollectionFactory $connectionCollectionFactory
+        \Logshub\OpenSubscriptions\Model\ResourceModel\Connection\CollectionFactory $connectionCollectionFactory
     ) {
         $this->connectionCollectionFactory = $connectionCollectionFactory;
     }

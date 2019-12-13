@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block;
+namespace Logshub\OpenSubscriptions\Block;
 
 class Services extends \Magento\Framework\View\Element\Template
 {
@@ -34,7 +34,7 @@ class Services extends \Magento\Framework\View\Element\Template
         return $this->coreRegistry->registry('products');
     }
 
-    public function getViewUrl(\OpenSubscriptions\OpenSubscriptions\Model\Service $service)
+    public function getViewUrl(\Logshub\OpenSubscriptions\Model\Service $service)
     {
         return $this->getUrl('*/*/details', [
             '_query' => [

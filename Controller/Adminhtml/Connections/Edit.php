@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Connections;
+namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Connections;
 
 class Edit extends \Magento\Backend\App\Action
 {
@@ -35,7 +35,7 @@ class Edit extends \Magento\Backend\App\Action
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('OpenSubscriptions_OpenSubscriptions::save');
+        return $this->_authorization->isAllowed('Logshub_OpenSubscriptions::save');
     }
 
     /**
@@ -47,7 +47,7 @@ class Edit extends \Magento\Backend\App\Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('OpenSubscriptions_OpenSubscriptions::index');
+        $resultPage->setActiveMenu('Logshub_OpenSubscriptions::index');
         //     ->addBreadcrumb(__('Staff'), __('Staff'))
         //     ->addBreadcrumb(__('Staff Infomation'), __('Staff Infomation'));
         return $resultPage;
@@ -56,7 +56,7 @@ class Edit extends \Magento\Backend\App\Action
     public function execute()
     {
         $id = $this->getRequest()->getParam('connection_id');
-        $model = $this->_objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\Connection');
+        $model = $this->_objectManager->create('Logshub\OpenSubscriptions\Model\Connection');
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {

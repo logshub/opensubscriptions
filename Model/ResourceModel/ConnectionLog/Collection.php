@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ConnectionLog;
+namespace Logshub\OpenSubscriptions\Model\ResourceModel\ConnectionLog;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -9,7 +9,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ConnectionLog', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ConnectionLog');
+        $this->_init('Logshub\OpenSubscriptions\Model\ConnectionLog', 'Logshub\OpenSubscriptions\Model\ResourceModel\ConnectionLog');
     }
 
     public function joinAdmins(array $fields = [])

@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Connections;
+namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Connections;
 
 class Index extends \Magento\Backend\App\Action
 {
@@ -17,7 +17,7 @@ class Index extends \Magento\Backend\App\Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('OpenSubscriptions_OpenSubscriptions::index');
+        $resultPage->setActiveMenu('Logshub_OpenSubscriptions::index');
         $resultPage->getConfig()->getTitle()->prepend((__('Connections')));
 
         return $resultPage;

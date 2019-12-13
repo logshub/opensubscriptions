@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection;
+namespace Logshub\OpenSubscriptions\Model\ResourceModel\Connection;
 
 class Setting extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {

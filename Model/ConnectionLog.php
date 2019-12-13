@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model;
+namespace Logshub\OpenSubscriptions\Model;
 
 class ConnectionLog extends \Magento\Framework\Model\AbstractModel
 {
@@ -8,6 +8,6 @@ class ConnectionLog extends \Magento\Framework\Model\AbstractModel
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ConnectionLog');
+        $this->_init('Logshub\OpenSubscriptions\Model\ResourceModel\ConnectionLog');
     }
 }

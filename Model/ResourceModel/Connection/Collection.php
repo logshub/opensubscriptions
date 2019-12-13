@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection;
+namespace Logshub\OpenSubscriptions\Model\ResourceModel\Connection;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -9,6 +9,6 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\Connection', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection');
+        $this->_init('Logshub\OpenSubscriptions\Model\Connection', 'Logshub\OpenSubscriptions\Model\ResourceModel\Connection');
     }
 }

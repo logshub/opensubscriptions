@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Connections;
+namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Connections;
 
 class Log extends \Magento\Backend\App\Action
 {
@@ -16,7 +16,7 @@ class Log extends \Magento\Backend\App\Action
         \Magento\Framework\Controller\Result\RawFactory $resultRawFactory,
         \Magento\Framework\View\LayoutFactory $layoutFactory,
         \Magento\Framework\Registry $registry,
-        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory
+        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory
     ) {
         parent::__construct($context);
         $this->resultRawFactory = $resultRawFactory;
@@ -42,7 +42,7 @@ class Log extends \Magento\Backend\App\Action
         $this->coreRegistry->register('current_service', $service);
 
         $layout = $this->layoutFactory->create();
-        $html = $layout->createBlock(\OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Connections\Log::class)->toHtml();
+        $html = $layout->createBlock(\Logshub\OpenSubscriptions\Block\Adminhtml\Connections\Log::class)->toHtml();
         $resultRaw = $this->resultRawFactory->create();
         $resultRaw->setContents($html);
         return $resultRaw;

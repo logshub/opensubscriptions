@@ -1,11 +1,11 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Controller\Adminhtml\Connections;
+namespace Logshub\OpenSubscriptions\Controller\Adminhtml\Connections;
 
 class Save extends \Magento\Backend\App\Action
 {
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('OpenSubscriptions_OpenSubscriptions::save');
+        return $this->_authorization->isAllowed('Logshub_OpenSubscriptions::save');
     }
 
     /**
@@ -22,7 +22,7 @@ class Save extends \Magento\Backend\App\Action
             return $resultRedirect->setPath('*/*/');
         }
         
-        $model = $this->_objectManager->create('OpenSubscriptions\OpenSubscriptions\Model\Connection');
+        $model = $this->_objectManager->create('Logshub\OpenSubscriptions\Model\Connection');
         $id = $this->getRequest()->getParam('connection_id');
         if ($id) {
             $model->load($id);

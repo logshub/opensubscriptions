@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Exception;
+namespace Logshub\OpenSubscriptions\Exception;
 
 /**
  * Thrown in not successful commands, not shown to end user (admin only)

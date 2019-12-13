@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service;
+namespace Logshub\OpenSubscriptions\Model\ResourceModel\Service;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -9,7 +9,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\Service', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Service');
+        $this->_init('Logshub\OpenSubscriptions\Model\Service', 'Logshub\OpenSubscriptions\Model\ResourceModel\Service');
     }
 
     public function filterByCustomer(int $customerId)

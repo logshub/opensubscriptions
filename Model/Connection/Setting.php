@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\Connection;
+namespace Logshub\OpenSubscriptions\Model\Connection;
 
 class Setting extends \Magento\Framework\Model\AbstractModel
 {
@@ -8,7 +8,7 @@ class Setting extends \Magento\Framework\Model\AbstractModel
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\Connection\Setting');
+        $this->_init('Logshub\OpenSubscriptions\Model\ResourceModel\Connection\Setting');
     }
 
     public function beforeSave()

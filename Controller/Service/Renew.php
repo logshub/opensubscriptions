@@ -1,7 +1,7 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Controller\Service;
+namespace Logshub\OpenSubscriptions\Controller\Service;
 
-use \OpenSubscriptions\OpenSubscriptions\Model\Service;
+use \Logshub\OpenSubscriptions\Model\Service;
 
 class Renew extends \Magento\Framework\App\Action\Action
 {
@@ -14,7 +14,7 @@ class Renew extends \Magento\Framework\App\Action\Action
         \Magento\Customer\Api\CustomerRepositoryInterface $customerRepository,
         \Magento\Catalog\Model\ProductFactory $productFactory,
         \Magento\Customer\Model\Session $customerSession,
-        \OpenSubscriptions\OpenSubscriptions\Model\ServiceFactory $serviceFactory
+        \Logshub\OpenSubscriptions\Model\ServiceFactory $serviceFactory
     ) {
         $this->storeManager = $storeManager;
         $this->customerRepository = $customerRepository;

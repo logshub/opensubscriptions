@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ScheduledTask;
+namespace Logshub\OpenSubscriptions\Model\ResourceModel\ScheduledTask;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -9,7 +9,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 
     protected function _construct()
     {
-        $this->_init('OpenSubscriptions\OpenSubscriptions\Model\ScheduledTask', 'OpenSubscriptions\OpenSubscriptions\Model\ResourceModel\ScheduledTask');
+        $this->_init('Logshub\OpenSubscriptions\Model\ScheduledTask', 'Logshub\OpenSubscriptions\Model\ResourceModel\ScheduledTask');
     }
 
     public function joinServices(array $fields = [])

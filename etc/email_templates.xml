@@ -2,5 +2,5 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:Magento:module:Magento_Email:etc/email_templates.xsd">
     <template id="opensubscriptions_service_creation"
               file="service/creation.html" label="Open Subscriptions Service Creation Email"
-              type="html" module="OpenSubscriptions_OpenSubscriptions" area="frontend"/>
+              type="html" module="Logshub_OpenSubscriptions" area="frontend"/>
 </config>

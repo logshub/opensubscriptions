@@ -3,14 +3,14 @@
     <update handle="editor"/>
     <body>
         <!-- <referenceContainer name="content">
-            <block class="OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Submodules" name="opensubscriptions_submodules" />
+            <block class="Logshub\OpenSubscriptions\Block\Adminhtml\Submodules" name="opensubscriptions_submodules" />
         </referenceContainer> -->
         <referenceContainer name="content">
             <!-- TODO: own block -->
             <block class="Magento\Sales\Block\Adminhtml\Order\View" name="sales_order_edit"/>
         </referenceContainer>
         <referenceContainer name="left">
-            <block class="OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Submodules\Tabs" name="opensubscriptions_submodules_tabs" />
+            <block class="Logshub\OpenSubscriptions\Block\Adminhtml\Submodules\Tabs" name="opensubscriptions_submodules_tabs" />
         </referenceContainer>
     </body>
 </page>

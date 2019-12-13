@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Model;
+namespace Logshub\OpenSubscriptions\Model;
 
 abstract class Submodule
 {
@@ -52,6 +52,6 @@ abstract class Submodule
         $msg = 'Submodule '.$code.' not found. Available: ' .
             implode(', ', Submodule::allIds());
 
-        throw new \OpenSubscriptions\OpenSubscriptions\Exception\SubmoduleException($msg);
+        throw new \Logshub\OpenSubscriptions\Exception\SubmoduleException($msg);
     }
 }

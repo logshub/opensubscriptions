@@ -1,5 +1,5 @@
 <?php
-namespace OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\Details;
+namespace Logshub\OpenSubscriptions\Block\Adminhtml\Services\Details;
 
 class Tabs extends \Magento\Backend\Block\Widget\Tabs
 {
@@ -36,13 +36,13 @@ class Tabs extends \Magento\Backend\Block\Widget\Tabs
     {
         $this->addTab('info', [
             'label' => __('Informations'),
-            'content' => $this->getLayout()->createBlock('OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs\Info')->toHtml(),
+            'content' => $this->getLayout()->createBlock('Logshub\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs\Info')->toHtml(),
             'class' => 'ajax'
         ]);
 
         $this->addTab('edit', [
             'label' => __('Edit Service'),
-            'content' => $this->getLayout()->createBlock('OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs\Edit')->toHtml(),
+            'content' => $this->getLayout()->createBlock('Logshub\OpenSubscriptions\Block\Adminhtml\Services\Details\Tabs\Edit')->toHtml(),
         ]);
 
         $this->eventManager->dispatch('opensubscriptions_adminhtml_service_tabs_' . $this->getService()->getSubmodule(), [
