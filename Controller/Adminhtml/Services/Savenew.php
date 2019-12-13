@@ -48,7 +48,8 @@ class Savenew extends \Magento\Backend\App\Action
             'name' => $this->escaper->escapeHtml($data['name']),
             'submodule' => $product->getOpenSubscriptionsSubmodule(),
             'status' => \OpenSubscriptions\OpenSubscriptions\Model\Service::PENDING,
-            'is_created' => 0
+            'is_created' => 0,
+            'expire_at' => $data['expire_at'],
         ]);
 
         try {

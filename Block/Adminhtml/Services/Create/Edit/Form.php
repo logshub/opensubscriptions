@@ -31,13 +31,15 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
             'name' => 'product_id',
             'label' => __('Product ID'),
             'title' => __('Product ID'),
-            'required' => true
+            'required' => true,
+            'note' => 'Service\'s submodule will be taken from the product.',
         ]);
         $fieldset->addField('customer_id', 'text', [
             'name' => 'customer_id',
             'label' => __('Customer ID'),
             'title' => __('Customer ID'),
-            'required' => true
+            'required' => true,
+            'note' => 'Customer with ownership of this service.',
         ]);
         $fieldset->addField('name', 'text', [
             'name' => 'name',

@@ -2,9 +2,15 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="editor"/>
     <body>
-        <referenceContainer name="content">
+        <!-- <referenceContainer name="content">
             <block class="OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Submodules" name="opensubscriptions_submodules" />
+        </referenceContainer> -->
+        <referenceContainer name="content">
+            <!-- TODO: own block -->
+            <block class="Magento\Sales\Block\Adminhtml\Order\View" name="sales_order_edit"/>
         </referenceContainer>
-        <referenceContainer name="left" remove="true"/>
+        <referenceContainer name="left">
+            <block class="OpenSubscriptions\OpenSubscriptions\Block\Adminhtml\Submodules\Tabs" name="opensubscriptions_submodules_tabs" />
+        </referenceContainer>
     </body>
 </page>

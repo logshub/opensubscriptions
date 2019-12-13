@@ -9,7 +9,7 @@ use \OpenSubscriptions\OpenSubscriptions\Exception\SubmoduleException;
 class Service extends \Magento\Framework\Model\AbstractModel
 {
     // used for quote_item_option table
-    const QUOTE_OPTION_NAME = 'oa_service';
+    const QUOTE_OPTION_NAME = 'os_service';
 
     const ACTIVE = 'active';
     const PENDING = 'pending';
@@ -183,7 +183,7 @@ class Service extends \Magento\Framework\Model\AbstractModel
     public function assignProductSettings(\Magento\Catalog\Model\Product $prod)
     {
         foreach ($prod->getData() as $k => $v) {
-            if (substr($k, 0, 9) === 'open_sub' && !in_array($k, $this->getAttributesToSkipSave()) && $v) {
+            if (substr($k, 0, 8) === 'open_sub' && !in_array($k, $this->getAttributesToSkipSave()) && $v) {
                 $this->_getResource()->assignServiceSetting($this->getServiceId(), $k, $v);
             }
         }
