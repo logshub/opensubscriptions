@@ -19,9 +19,10 @@ use Magento\Eav\Model\Entity\Attribute\SetFactory as AttributeSetFactory;
  */
 class InstallData implements InstallDataInterface
 {
-    const ATTRIBUTE_SET_NAME = 'Open Subscriptions';
     const ATTRIBUTE_CODE_SUBMODULE = 'open_subscriptions_submodule';
     const ATTRIBUTE_CODE_CONNECTION_ID = 'open_subscriptions_connection_id';
+    // these attributes will be assigned to attribute set's groups from submodules
+    const ATTRIBUTES_FOR_ATTR_SETS = [self::ATTRIBUTE_CODE_SUBMODULE, self::ATTRIBUTE_CODE_CONNECTION_ID];
 
     private $eavSetupFactory;
     private $attributeSetFactory;
@@ -48,20 +49,6 @@ class InstallData implements InstallDataInterface
         $entityTypeId = $categorySetup->getEntityTypeId(\Magento\Catalog\Model\Product::ENTITY);
         $defaultAttributeSetId = $categorySetup->getDefaultAttributeSetId($entityTypeId);
 
-        try {
-            $attributeSet->setData([
-                'attribute_set_name' => self::ATTRIBUTE_SET_NAME,
-                'entity_type_id' => $entityTypeId,
-                'sort_order' => 200,
-            ]);
-            $attributeSet->validate();
-            $attributeSet->save();
-            $attributeSet->initFromSkeleton($defaultAttributeSetId);
-            $attributeSet->save();
-        } catch (\Exception $e){ // already exists
-            $attributeSet->load(self::ATTRIBUTE_SET_NAME, 'attribute_set_name');
-        }
-
         // creating PRODUCT ATTRIBUTE
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
         $eavSetup->addAttribute(
@@ -87,7 +74,6 @@ class InstallData implements InstallDataInterface
                 'used_in_product_listing' => false,
                 'unique' => false,
                 'apply_to' => '',
-                'attribute_set' => self::ATTRIBUTE_SET_NAME,
                 'note' => 'Behaviour of the service will depends on this setting.',
             ]
         );
@@ -114,20 +100,9 @@ class InstallData implements InstallDataInterface
                 'used_in_product_listing' => false,
                 'unique' => false,
                 'apply_to' => '',
-                'attribute_set' => self::ATTRIBUTE_SET_NAME,
                 'note' => 'This setting is important only if selected submodule is connecting to remote API.',
             ]
         );
-
-        // adding new Attribute group
-        $eavSetup->addAttributeGroup($entityTypeId, $attributeSet->getId(), self::ATTRIBUTE_SET_NAME, 100);
-
-        // Add existing attribute to group
-        $attributeGroupId = $eavSetup->getAttributeGroupId($entityTypeId, $attributeSet->getId(), self::ATTRIBUTE_SET_NAME);
-        foreach ([self::ATTRIBUTE_CODE_SUBMODULE, self::ATTRIBUTE_CODE_CONNECTION_ID] as $attrCode) {
-            $attributeId = $eavSetup->getAttributeId($entityTypeId, $attrCode);
-            $eavSetup->addAttributeToGroup($entityTypeId, $attributeSet->getId(), $attributeGroupId, $attributeId, null);
-        }
 
         $setup->endSetup();
     }

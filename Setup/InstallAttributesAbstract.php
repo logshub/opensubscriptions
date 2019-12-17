@@ -69,7 +69,8 @@ abstract class InstallAttributesAbstract implements InstallDataInterface
         // creating ATTRIBUTE SET
         $categorySetup = $this->categorySetupFactory->create(['setup' => $setup]);
         $entityTypeId = $categorySetup->getEntityTypeId(\Magento\Catalog\Model\Product::ENTITY);
-        $attributeSet = $this->createProductAttributeSet($entityTypeId);
+        $defaultAttributeSetId = $categorySetup->getDefaultAttributeSetId($entityTypeId);
+        $attributeSet = $this->createProductAttributeSet($entityTypeId, $defaultAttributeSetId);        
 
         // creating PRODUCT ATTRIBUTE
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
@@ -98,7 +99,9 @@ abstract class InstallAttributesAbstract implements InstallDataInterface
 
         // Add existing attribute to group
         $attributeGroupId = $eavSetup->getAttributeGroupId($entityTypeId, $attributeSet->getId(), $this->getNewAttributeSetName());
-        foreach ($this->getNewProductsAttributes() as $attrCode => $attrSettings) {
+        $attributeCodesToAssignToGroup = array_merge(InstallData::ATTRIBUTES_FOR_ATTR_SETS, array_keys($this->getNewProductsAttributes()));
+
+        foreach ($attributeCodesToAssignToGroup as $attrCode) {
             $attributeId = $eavSetup->getAttributeId($entityTypeId, $attrCode);
             $eavSetup->addAttributeToGroup($entityTypeId, $attributeSet->getId(), $attributeGroupId, $attributeId, null);
         }
@@ -140,11 +143,9 @@ abstract class InstallAttributesAbstract implements InstallDataInterface
         }
     }
 
-    protected function createProductAttributeSet(int $entityTypeId)
+    protected function createProductAttributeSet(int $entityTypeId, $defaultAttributeSetId)
     {
         $attributeSet = $this->attributeSetFactory->create();
-        $defaultAttributeSetId = $this->getDefaultAttributeSetId($entityTypeId);
-
         try {
             $attributeSet->setData([
                 'attribute_set_name' => $this->getNewAttributeSetName(),
@@ -166,19 +167,6 @@ abstract class InstallAttributesAbstract implements InstallDataInterface
         return $attributeSet;
     }
 
-    protected function getDefaultAttributeSetId(int $entityTypeId): int
-    {
-        $setCollection = $this->attributeSetFactory->create()->getCollection();
-        $setCollection->addFieldToFilter('entity_type_id', $entityTypeId);
-        $setCollection->addFieldToFilter('attribute_set_name', self::BASE_ATTRIBUTE_SET_NAME);
-        foreach ($setCollection as $attributeSet) {
-            return $attributeSet->getId();
-        }
-
-        // TODO: catch it, as if thrown it will block whole store??
-        throw new \Exception('Unable to get default attribute set');
-    }
-
     /**
      * Retrieve attribute set based on given name.
      * This utility methods assumes that there is only one attribute set with given name,
@@ -188,9 +176,6 @@ abstract class InstallAttributesAbstract implements InstallDataInterface
      */
     protected function getAttributeSetByName($attributeSetName)
     {
-        // $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        /** @var \Magento\Eav\Model\Entity\Attribute\Set $attributeSet */
-        // $attributeSet = $objectManager->create(\Magento\Eav\Model\Entity\Attribute\Set::class)
         $attributeSet = $this->attributeSetFactory->create()
             ->load($attributeSetName, 'attribute_set_name');
         if ($attributeSet->getId() === null) {

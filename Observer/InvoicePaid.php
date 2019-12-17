@@ -20,7 +20,7 @@ class InvoicePaid implements \Magento\Framework\Event\ObserverInterface
         $order = $observer->getEvent()->getInvoice()->getOrder();
         foreach ($order->getAllItems() as $item) {
             $product = $item->getProduct();
-            if (!$product->getOpenSubscriptionsSubmodule() || !$product->getOpenSubscriptionsConnectionId()) {
+            if (!$product->getOpenSubscriptionsSubmodule()) {
                 continue;
             }
             // TODO: posssible bug: an order without quote will not have service assigned. Is it possible?
