@@ -2,31 +2,27 @@
 
 ## Requirements
 
-* Magento 2.2.4 (test more)
-* PHP 7.1 (test more)
-* MySQL 5.5+
+* Magento 2.2.4+
 
 ## Installation
 
 ```
-composer require opensubscriptions/open-subscriptions
+composer require logshub/opensubscriptions
+php bin/magento setup:di:compile
 php bin/magento setup:upgrade
-php bin/magento module:status
 php bin/magento cache:clean
 php bin/magento cache:flush
 php bin/magento setup:static-content:deploy
-php bin/magento indexer:reindex
 ```
 
 ## Uninstalling
 
 ```
-composer remove opensubscriptions/open-subscriptions
+composer remove logshub/opensubscriptions
 php bin/magento setup:upgrade
 php bin/magento cache:clean
 php bin/magento cache:flush
 php bin/magento setup:static-content:deploy
-php bin/magento indexer:reindex
 ```
 
 ## Submodules required files

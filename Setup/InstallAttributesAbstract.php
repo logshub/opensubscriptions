@@ -211,7 +211,7 @@ abstract class InstallAttributesAbstract implements InstallDataInterface
             'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
             'visible' => true,
             'required' => false,
-            'user_defined' => false,
+            'user_defined' => true, // without TRUE, attribute will be added to every attribute set
             'default' => '',
             'searchable' => false,
             'filterable' => false,
@@ -232,7 +232,7 @@ abstract class InstallAttributesAbstract implements InstallDataInterface
         return [
             'required' => false,
             'visible' => true,
-            'user_defined' => false,
+            'user_defined' => true, // without TRUE, attribute will be added to every attribute set
             'sort_order' => 1000,
             'position' => 1000,
             'system' => 0,

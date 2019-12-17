@@ -10,6 +10,13 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Catalog\Setup\CategorySetupFactory;
 use Magento\Eav\Model\Entity\Attribute\SetFactory as AttributeSetFactory;
 
+/**
+ * To repeat installation:
+ * 1. remove Attribute Set by UI
+ * 2. delete from setup_module where module IN("Logshub_OpenSubscriptions","Logshub_OpenSubscriptionsSubDefault");
+ * 3. delete from eav_attribute WHERE attribute_code like "open_sub%";
+ * 4. make fix upgrade deploy cache 
+ */
 class InstallData implements InstallDataInterface
 {
     const ATTRIBUTE_SET_NAME = 'Open Subscriptions';
@@ -71,7 +78,7 @@ class InstallData implements InstallDataInterface
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible' => true,
                 'required' => true,
-                'user_defined' => false,
+                'user_defined' => true, // without TRUE, attribute will be added to every attribute set
                 'default' => '',
                 'searchable' => false,
                 'filterable' => false,
@@ -81,6 +88,7 @@ class InstallData implements InstallDataInterface
                 'unique' => false,
                 'apply_to' => '',
                 'attribute_set' => self::ATTRIBUTE_SET_NAME,
+                'note' => 'Behaviour of the service will depends on this setting.',
             ]
         );
         $eavSetup->addAttribute(
@@ -97,7 +105,7 @@ class InstallData implements InstallDataInterface
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible' => true,
                 'required' => false,
-                'user_defined' => false,
+                'user_defined' => true, // without TRUE, attribute will be added to every attribute set
                 'default' => '',
                 'searchable' => false,
                 'filterable' => false,
@@ -107,6 +115,7 @@ class InstallData implements InstallDataInterface
                 'unique' => false,
                 'apply_to' => '',
                 'attribute_set' => self::ATTRIBUTE_SET_NAME,
+                'note' => 'This setting is important only if selected submodule is connecting to remote API.',
             ]
         );
 
