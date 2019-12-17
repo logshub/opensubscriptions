@@ -43,8 +43,11 @@ class ServiceExecNotification implements \Magento\Framework\Event\ObserverInterf
             
             // TODO: timeout because it will block everything in case of lag
             
+            /** @var \Magento\Email\Model\Transport */
             $transport = $builder->getTransport();
-            $transport->getMessage()->setSubject('Service has been created');
+            /** @var \Magento\Framework\Mail\EmailMessage */
+            // TODO: unable to set subject ?? 
+            // $transport->getMessage()->setSubject('Service has been created');
             $transport->sendMessage();
             
             $this->logger->info('Notification email after cration has been sent - #' . $service->getServiceId());
