@@ -2,10 +2,7 @@
     "name": "logshub/opensubscriptions",
     "description": "Open Subscriptions",
     "type": "magento2-module",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
-    ],
+    "license": ["OSL-3.0"],
     "require": {
         "logshub/opensubscriptions-submodule-default": "*"
     },

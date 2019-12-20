@@ -1,10 +1,14 @@
 # Open Subscriptions
 
-## Requirements
+The revolutionary Magento module that supports subscriptions and more - also an innovative command and submodule system.
 
-* Magento 2.2.4+
+* Home page: https://www.logshub.com/en/opensubscriptions
+* Quick guide: https://www.logshub.com/en/opensubscriptions/quick-guide
+* Installation: https://www.logshub.com/en/opensubscriptions/installation
 
 ## Installation
+
+Be aware that this is APLHA version.
 
 ```
 composer require logshub/opensubscriptions
@@ -15,35 +19,6 @@ php bin/magento cache:flush
 php bin/magento setup:static-content:deploy
 ```
 
-## Uninstalling
+## License
 
-```
-composer remove logshub/opensubscriptions
-php bin/magento setup:upgrade
-php bin/magento cache:clean
-php bin/magento cache:flush
-php bin/magento setup:static-content:deploy
-```
-
-## Submodules required files
-
-```
-Model/Connection.php
-Model/Submodule.php
-Setup/InstallData.php
-etc/module.xml
-README.md
-composer.json
-registration-opensubscriptions.php
-registration.php
-```
-
-## FAQ
-
-**How to add attributes for my submodules?**
-
-Use standard Magento's attributes and attribute sets for products.
-
-## TODO
-
-* product BOOL attribute to determine whether it is monthly payment (templates/checkout/cart/item/default.phtml)
+Open Software License (OSL 3.0)
